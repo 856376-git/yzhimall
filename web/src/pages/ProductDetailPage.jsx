@@ -49,6 +49,26 @@ export default function ProductDetailPage() {
   const displayStock = selectedSku ? selectedSku.stock : (p?.stock || 0)
   const skuText = selectedSku ? selectedSku.sku_code : (p?.specs ? '' : '')
 
+  // SKU 规格聚合: 必须在 early return 之前定义, 否则破坏 Hook 顺序
+  const skusEarly = Array.isArray(p?.skus) ? p.skus : []
+  const specGroups = useMemo(() => {
+    if (skusEarly.length === 0) return []
+    const map = {}
+    skusEarly.forEach((s) => {
+      const parsed = parseSkuSpecs(s.specs)
+      Object.entries(parsed).forEach(([k, v]) => {
+        if (!map[k]) map[k] = new Set()
+        map[k].add(v)
+      })
+    })
+    return Object.entries(map).map(([k, set]) => ({ name: k, options: Array.from(set) }))
+  }, [p && p.id, skusEarly.length])
+
+  const currentSelection = useMemo(() => {
+    if (!selectedSku) return {}
+    return parseSkuSpecs(selectedSku.specs)
+  }, [selectedSku])
+
   const onAdd = () => {
     add({ ...p, price: displayPrice }, skuText || '默认', qty)
     toast('已加入购物车', 'success')
@@ -64,27 +84,6 @@ export default function ProductDetailPage() {
       <div className="empty"><Icon name="box" size={56} /><div className="mt-12">商品不存在或已下架</div><Link className="btn mt-20" to="/">回首页</Link></div>
     </div></div>
   )
-
-  const skus = Array.isArray(p.skus) ? p.skus : []
-  // 按 SKU specs 聚合出每个维度(颜色/容量等)的可选值集合
-  const specGroups = useMemo(() => {
-    if (skus.length === 0) return []
-    const map = {}
-    skus.forEach((s) => {
-      const parsed = parseSkuSpecs(s.specs)
-      Object.entries(parsed).forEach(([k, v]) => {
-        if (!map[k]) map[k] = new Set()
-        map[k].add(v)
-      })
-    })
-    return Object.entries(map).map(([k, set]) => ({ name: k, options: Array.from(set) }))
-  }, [p && p.id, skus.length])
-
-  // 当前选中维度 -> 是否能找到完全匹配的 SKU
-  const currentSelection = useMemo(() => {
-    if (!selectedSku) return {}
-    return parseSkuSpecs(selectedSku.specs)
-  }, [selectedSku])
 
   return (
     <div className="page">

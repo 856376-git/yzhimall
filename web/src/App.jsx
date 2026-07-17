@@ -1,4 +1,4 @@
-
+﻿
 import { Component } from 'react'
 
 class ErrorBoundary extends Component {
@@ -10,7 +10,7 @@ class ErrorBoundary extends Component {
       const e = this.state.err
       return (
         <div style={{padding:'40px',fontFamily:'monospace',color:'#c0392b',background:'#fff5f5',minHeight:'100vh'}}>
-          <h2>页面渲染出错</h2>
+          <h2>椤甸潰娓叉煋鍑洪敊</h2>
           <pre style={{whiteSpace:'pre-wrap',background:'#fff',padding:'16px',border:'1px solid #ddd',borderRadius:'4px'}}>
 {String(e && (e.stack || e.message || e))}
           </pre>
@@ -33,6 +33,8 @@ import CheckoutPage from './pages/CheckoutPage'
 import AuthPage from './pages/AuthPage'
 import OrdersPage from './pages/OrdersPage'
 import CheckInPage from './pages/CheckInPage'
+import SeckillPage from './pages/SeckillPage'
+import CouponsPage from './pages/CouponsPage'
 import MerchantLoginPage from './pages/MerchantLoginPage'
 import AdminLoginPage from './pages/AdminLoginPage'
 import MerchantLayout from './pages/MerchantLayout'
@@ -67,6 +69,8 @@ export default function App() {
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/orders" element={<OrdersPage />} />
           <Route path="/checkin" element={<CheckInPage />} />
+          <Route path="/seckill" element={<SeckillPage />} />
+          <Route path="/coupons" element={<CouponsPage />} />
         </Route>
         <Route path="/login" element={<AuthPage />} />
         <Route path="/merchant/login" element={<MerchantLoginPage />} />
