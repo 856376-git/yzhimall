@@ -147,7 +147,7 @@ export default function HomePage() {
               {seckill.map((p) => {
                 const cut = p.original_price && p.original_price > p.price ? Math.round((1 - p.price / p.original_price) * 100) : 0
                 return (
-                  <a key={p.id} className="seckill-card" onClick={() => nav(`/products/${p.id}`)}>
+                  <a key={p.id} className="seckill-card" onClick={() => nav(`/product/${p.id}`)}>
                     <div className="sk-img"><img src={p.primary_image || (p.images && p.images[0]) || ''} alt="" /></div>
                     <div className="sk-name">{p.name}</div>
                     <div className="sk-price">¥{Number(p.price).toFixed(2)} <s>¥{Number(p.original_price).toFixed(2)}</s></div>
@@ -182,7 +182,7 @@ export default function HomePage() {
             </div>
             <div className="hot-row">
               {hotList.slice(0, 5).map((p, i) => (
-                <a key={p.id} className="hot-card" onClick={() => nav(`/products/${p.id}`)}>
+                <a key={p.id} className="hot-card" onClick={() => nav(`/product/${p.id}`)}>
                   <span className={'hot-rank rank-' + (i+1)}>{i+1}</span>
                   <img src={p.primary_image || (p.images && p.images[0]) || ''} alt="" className="hot-img" />
                   <div className="hot-info">
