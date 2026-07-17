@@ -80,52 +80,83 @@ npm run dev                   # 前端起在 http://localhost:3001，代理 /api
 
 ---
 
-## 2. 项目架构
+## 1.x 截图预览
 
-前后端分离，前端通过 Vite 代理把 `/api/*` 转发到后端 Flask；后端按 Flask 应用工厂 + 蓝图 Namespace 组织，分层清晰（路由 → 服务 → 模型）。
+> 在此替换为本地运行截图。先把图片放到 `docs/screenshots/` 目录，然后 `git add .`
+> → `git commit -m "docs: add screenshots"` → `git push`。如果改了图片文件名，
+> 把下面 `docs/screenshots/...` 路径替换成最终文件名即可。
 
-```
-yzhimall/
-├── app/                       # 后端 Flask 应用
-│   ├── __init__.py            # 应用工厂 create_app()
-│   ├── extensions.py           # db / jwt / cache / limiter 初始化
-│   ├── api/                   # 10 个 Namespace（auth/user/product/cart/order/payment/merchant/admin/notification/upload）
-│   │   └── <module>/routes.py
-│   ├── models/                # 10 张 SQLAlchemy 模型 + 软删除基类
-│   ├── services/              # 业务逻辑（auth / rbac / notification）
-│   ├── schemas/               # 请求/响应校验
-│   ├── tasks/                 # Celery 异步任务（代码已就绪，运行时可选启用）
-│   ├── utils/                 # 统一响应 / 异常 / 装饰器 / 校验器
-│   └── config.py              # 多环境配置
-├── web/                       # 前端 React 工程
-│   ├── src/
-│   │   ├── api/              # 统一 API 出层（mock / 真实后端可切）
-│   │   ├── lib/http.js       # axios 封装 + Token 自动刷新
-│   │   ├── store/            # Zustand 状态（cart / user / toast）
-│   │   ├── components/       # 通用组件（Icon / ProductCard / PaymentModal / AdRail …）
-│   │   ├── layouts/          # 主布局 / 商家布局 / 管理员布局
-│   │   └── pages/            # 19 个页面组件
-│   └── vite.config.js        # :3001 + 代理 /api → 5000
-├── migrations/                # Alembic 数据库迁移
-├── tests/                     # pytest 测试（auth / order / notification）
-├── docker/                    # Dockerfile.flask / Dockerfile.celery
-├── docker-compose.yml         # 一键启动 MySQL + Redis + Flask + Celery
-├── requirements.txt
-├── run.py
-└── .env.example
-```
+### 买家端
 
-### 请求流与分层
+**商城首页**
 
-```
-React 组件 → api/{js} → axios(http.js) → Vite proxy → Flask Route(@ns)
-                                                           ↓
-                                                    Service（业务/事务/缓存）
-                                                           ↓
-                                                    Model（SQLAlchemy ORM）
-                                                           ↓
-                                                    SQLite / MySQL
-```
+![商城首页](docs/screenshots/buyer-home.png)
+
+**商品详情**
+
+![商品详情](docs/screenshots/buyer-product-detail.png)
+
+**购物车**
+
+![购物车](docs/screenshots/buyer-cart.png)
+
+**结算页（收货地址表单）**
+
+![结算页（收货地址表单）](docs/screenshots/buyer-checkout.png)
+
+**模拟支付（二维码 + 倒计时）**
+
+![模拟支付（二维码 + 倒计时）](docs/screenshots/buyer-payment.png)
+
+**订单列表**
+
+![订单列表](docs/screenshots/buyer-orders.png)
+
+**每日签到**
+
+![每日签到](docs/screenshots/buyer-checkin.png)
+
+
+### 商家工作台
+
+**商家登录**
+
+![商家登录](docs/screenshots/merchant-login.png)
+
+**商家概览**
+
+![商家概览](docs/screenshots/merchant-dashboard.png)
+
+**商家商品管理**
+
+![商家商品管理](docs/screenshots/merchant-products.png)
+
+**商家订单**
+
+![商家订单](docs/screenshots/merchant-orders.png)
+
+
+### 管理员后台
+
+**管理员登录**
+
+![管理员登录](docs/screenshots/admin-login.png)
+
+**管理员概览（看板统计）**
+
+![管理员概览（看板统计）](docs/screenshots/admin-dashboard.png)
+
+**管理员 - 用户管理**
+
+![管理员 - 用户管理](docs/screenshots/admin-users.png)
+
+**管理员 - 订单管理**
+
+![管理员 - 订单管理](docs/screenshots/admin-orders.png)
+
+**管理员 - 商品管理**
+
+![管理员 - 商品管理](docs/screenshots/admin-products.png)
 
 ---
 
