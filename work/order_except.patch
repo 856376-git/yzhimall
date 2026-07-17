@@ -1,0 +1,10 @@
+*** Begin Patch
+*** Update File: app/api/order/routes.py
+@@
+         except Exception as e:
+             db.session.rollback()
+-            return bad_request(f"鍒涘缓璁㈠崟澶辫触: {str(e)}")
++            from app.utils.exceptions import InternalServerError
++            current_app.logger.exception("create order failed user=%s", user_id)
++            raise InternalServerError("鍒涘缓璁㈠崟澶辫触锛岃绋嶅悗閲嶈瘯")
+*** End Patch

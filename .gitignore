@@ -1,0 +1,86 @@
+﻿# ============================
+# Python
+# ============================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+venv*/
+env/
+ENV/
+.venv/
+
+build/
+dist/
+*.egg-info/
+*.egg
+
+# ============================
+# Flask / runtime
+# ============================
+instance/
+*.db
+yzhimall.db
+*.sqlite
+*.sqlite3
+
+# Secret / env (keep .env.example)
+.env
+.flaskenv
+
+# Logs
+*.log
+flask_err.log
+flask_out.log
+logs/
+
+# Cache / temp
+.cache/
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+
+# ============================
+# Node / Frontend (web/)
+# ============================
+node_modules/
+web/node_modules/
+web/dist/
+web/.vite/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ============================
+# Editor / OS
+# ============================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================
+# Secondary workspace dirs
+# ============================
+work/cache/
+work/output/
+uploads/*
+!uploads/.gitkeep
+
+# Misc local scratch
+13.py
+**/~$*
+
+# Legacy Vue project (deprecated, pending cleanup in repo)
+frontend/
+

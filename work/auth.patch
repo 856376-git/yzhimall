@@ -1,0 +1,35 @@
+﻿*** Begin Patch
+*** Update File: app/api/auth/routes.py
+@@
+     @ns.expect(_register_model)
++    @ns.doc(responses={201: "注册成功", 400: "参数错误/邮箱已注册"})
+     def post(self):
+         """用户注册（支持选择角色）"""
+@@
+     @ns.expect(_login_model)
++    @ns.doc(responses={200: "登录成功，返回 token", 400: "账号或密码错误"})
+     def post(self):
+         """买家登录（邮箱+密码）"""
+@@
+     @ns.expect(_account_login_model)
++    @ns.doc(responses={200: "登录成功，返回 token", 400: "账号或密码错误"})
+     def post(self):
+         """商家登录（邮箱/手机号+密码）"""
+@@
+     @ns.expect(_account_login_model)
++    @ns.doc(responses={200: "登录成功，返回 token", 400: "账号或密码错误"})
+     def post(self):
+         """管理员登录（账号+密码）"""
+@@
+ class Refresh(Resource):
+     @jwt_required(refresh=True)
++    @ns.doc(security="Bearer", responses={200: "新的 access_token", 401: "未认证/refresh token 无效"})
+     def post(self):
+         """刷新 Access Token"""
+@@
+ class Logout(Resource):
+     @jwt_required()
++    @ns.doc(security="Bearer", responses={200: "登出成功", 401: "未认证"})
+     def post(self):
+         """登出"""
+*** End Patch
