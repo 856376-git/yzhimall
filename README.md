@@ -487,36 +487,8 @@ docker-compose up -d --build
 
 ---
 
-## 12. 面试要点
 
-可作为面试讲解的切入点：
-
-- **三角色分离的前端架构**：路由组 + 布局守卫，各自独立工作区，鉴权失败只回自己登录页
-- **mock / 真实后端双路径 API 层**：`VITE_USE_MOCK` 一行切换，前端不依赖后端起服务就能开发/预览
-- **JWT 双 Token + 黑名单 + 自动刷新**：access 短、refresh 长，前端拦截器无感续期
-- **订单系统的事务 + 行锁 + 幂等 key**：超卖防护、支付回调重放安全
-- **RBAC 基础设施 vs 实际鉴权**：为什么先落地单列 role，基础设施留作扩展（务实取舍）
-- **统一响应信封 + 全局异常**：为什么无鉴权端点也返回 HTTP 200（前端拦截器只看 body.code）
-- **dynamic 关系为什么不能 eager load**：SQLAlchemy 2.0 的行为差异
-- **Docker Compose 一键部署**：开发（SQLite/memory）→ 生产（MySQL/Redis/Celery）零代码改动的切换路径
-- **迭代过程中的踩坑**：见第 11 节
-
-更细的话术与延伸问题见 `work/INTERVIEW.md`。
-
----
-
-## 13. 后续计划
-
-按优先级：
-
-1. **前端打磨**：三工作区的空 / loading / 错误态完善；响应式与交互细节；旧 Vue 工程 `frontend/` 清理
-2. **商家端 SKU 联动**：ProductSKU 模型已建，前端商品详情页 SKU 价格 / 库存选择联动
-3. **切到 MySQL + Redis**：`.env` 切换 + `docker-compose up`，验证生产配置下的缓存与异步任务
-4. **RBAC 接入登录**：把 5 角色 + 审计日志接进实际登录流程，单列 role 降级为兼容字段
-5. **测试加强**：pytest 覆盖率提升、CI 接 GitHub Actions
-
----
 
 ## License
 
-本项目当前未附加开源协议。如需使用请先联系作者。
+本项目完全开源，给予每个初学者学习
