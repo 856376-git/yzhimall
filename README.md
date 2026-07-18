@@ -90,73 +90,89 @@ npm run dev                   # 前端起在 http://localhost:3001，代理 /api
 
 **商城首页**
 
-![商城首页](docs/screenshots/buyer-home.png)
+![商城首页]<img width="2549" height="1352" alt="8252ebd1ed6ce07db8c2b551ec8b83b3" src="https://github.com/user-attachments/assets/71798149-54d4-4710-8440-261c57b3f348" />
+
 
 **商品详情**
 
-![商品详情](docs/screenshots/buyer-product-detail.png)
+![商品详情]<img width="2549" height="1352" alt="21bbca63351c3004cd38ec90ffbec6a6" src="https://github.com/user-attachments/assets/a8d8909e-53f2-4343-b2d8-d0c9a69d229e" />
+
 
 **购物车**
 
-![购物车](docs/screenshots/buyer-cart.png)
+![购物车]<img width="2549" height="1352" alt="4fb02bacd6146bea951ad5ea5de87922" src="https://github.com/user-attachments/assets/7785bd08-aded-4413-a7f0-f71fca47aad6" />
+
 
 **结算页（收货地址表单）**
 
-![结算页（收货地址表单）](docs/screenshots/buyer-checkout.png)
+![结算页（收货地址表单）]<img width="2549" height="1352" alt="8a98eb8dbe146ac2b477883d91b0daf5" src="https://github.com/user-attachments/assets/2f819798-3ca7-4c9b-952a-2b4235069cab" />
+
 
 **模拟支付（二维码 + 倒计时）**
 
-![模拟支付（二维码 + 倒计时）](docs/screenshots/buyer-payment.png)
+![模拟支付（二维码 + 倒计时）]<img width="2549" height="1352" alt="cfd19c09632ad787dd45daae388f666b" src="https://github.com/user-attachments/assets/6b8381be-5267-4d6c-8082-169bc2f45116" />
+
 
 **订单列表**
 
-![订单列表](docs/screenshots/buyer-orders.png)
+![订单列表]<img width="2549" height="1352" alt="c0fe605eef0319eda23157ca1f49a790" src="https://github.com/user-attachments/assets/aa180f8b-20e1-4d40-b82a-53b7ce711532" />
+
 
 **每日签到**
 
-![每日签到](docs/screenshots/buyer-checkin.png)
+![每日签到]<img width="2549" height="1352" alt="bc56e9835358e440bcca61007fceaebb" src="https://github.com/user-attachments/assets/85a53ee6-58f0-45b2-b63e-fc324346fbcd" />
 
 
 ### 商家工作台
 
 **商家登录**
 
-![商家登录](docs/screenshots/merchant-login.png)
+![商家登录]<img width="2549" height="1352" alt="55175dec3ea41638d58a804f3e5f6011" src="https://github.com/user-attachments/assets/73b629b1-8d02-433a-9480-b8b991d6fc1a" />
+
 
 **商家概览**
 
-![商家概览](docs/screenshots/merchant-dashboard.png)
+![商家概览]<img width="2549" height="1352" alt="ed6f5aaac45f9f94ae24b4c2befbe42b" src="https://github.com/user-attachments/assets/797df221-c6b0-4f55-8a03-81537b90eece" />
+
+
+
 
 **商家商品管理**
 
-![商家商品管理](docs/screenshots/merchant-products.png)
+![商家商品管理]<img width="2549" height="1352" alt="59ba497c2f821b1e2c058f0cb5b58a4c" src="https://github.com/user-attachments/assets/2811c7c5-21c8-435e-8296-4bf1610372cc" />
+
 
 **商家订单**
 
-![商家订单](docs/screenshots/merchant-orders.png)
+![商家订单]<img width="2549" height="1352" alt="76749be70719916c0c8ca0dba4442105" src="https://github.com/user-attachments/assets/29d0ce49-8cbc-4045-9938-5c20aa5bf171" />
 
 
 ### 管理员后台
 
 **管理员登录**
 
-![管理员登录](docs/screenshots/admin-login.png)
+![管理员登录]<img width="2549" height="1352" alt="a4cfb42cb4388c495eeb604fa9ea9e7c" src="https://github.com/user-attachments/assets/b9d899c2-2748-429d-a50d-800f31429f83" />
+
 
 **管理员概览（看板统计）**
 
-![管理员概览（看板统计）](docs/screenshots/admin-dashboard.png)
+![管理员概览（看板统计）]<img width="2549" height="1352" alt="1227c431d9a1b4ada7a6ff00864f6c13" src="https://github.com/user-attachments/assets/da3e8818-f5ed-4e9b-b752-048e4e242693" />
+
 
 **管理员 - 用户管理**
 
-![管理员 - 用户管理](docs/screenshots/admin-users.png)
+![管理员 - 用户管理]<img width="2549" height="1352" alt="a40faebf8efd03bd1ce887f238ae7d3f" src="https://github.com/user-attachments/assets/ed7a64dc-f6c5-40cd-a5de-b0da6ed0ce73" />
+
 
 **管理员 - 订单管理**
 
-![管理员 - 订单管理](docs/screenshots/admin-orders.png)
+![管理员 - 订单管理]<img width="2549" height="1352" alt="25433952f46abc3c501f427130c5b146" src="https://github.com/user-attachments/assets/b0dffc59-e4db-4a26-9589-c4eb18e51936" />
+
 
 **管理员 - 商品管理**
 
-![管理员 - 商品管理](docs/screenshots/admin-products.png)
+![管理员 - 商品管理]<img width="2549" height="1352" alt="414079609f3479997b377577e8fc8a90" src="https://github.com/user-attachments/assets/580ada48-55ee-49a6-805a-dc397a5174da" />
+
 
 ---
 
